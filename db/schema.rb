@@ -10,10 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170704175615) do
+ActiveRecord::Schema.define(version: 20170705205631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attendances", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "protest_id"
+    t.index ["protest_id"], name: "index_attendances_on_protest_id"
+    t.index ["user_id"], name: "index_attendances_on_user_id"
+  end
+
+  create_table "passengers", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "transportation_id"
+    t.index ["transportation_id"], name: "index_passengers_on_transportation_id"
+    t.index ["user_id"], name: "index_passengers_on_user_id"
+  end
+
+  create_table "protests", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "location"
+    t.datetime "time"
+    t.bigint "creator_id"
+    t.index ["creator_id"], name: "index_protests_on_creator_id"
+  end
+
+  create_table "transportations", force: :cascade do |t|
+    t.string "pickup_location"
+    t.string "type"
+    t.bigint "destination_id"
+    t.bigint "transporter_id"
+    t.index ["destination_id"], name: "index_transportations_on_destination_id"
+    t.index ["transporter_id"], name: "index_transportations_on_transporter_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
