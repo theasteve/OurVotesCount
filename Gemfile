@@ -34,6 +34,16 @@ gem 'devise'
 # gem 'capistrano-rails', group: :development
 #paperclip for images
 gem 'paperclip', '~> 5.1'
+# Bootstrap for styling
+gem 'bootstrap'
+# Jquery-rails
+gem 'jquery-rails'
+# turbolinks
+gem 'turbolinks'
+# Add theter needed for Bootstrap 4
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
