@@ -4,7 +4,7 @@ class ProtestsController < ApplicationController
   end
 
   def show
-    protest = Protest.find(params[:id])
+    @protest = Protest.find(params[:id])
   end
 
   def new
@@ -16,6 +16,7 @@ class ProtestsController < ApplicationController
 
   def create
     @protest = Protest.new(protest_params)
+    @protest.creator = current_user 
     respond_to do |format|
       if @protest.save
         format.html { redirect_to @protest, notice: 'Protest was successfully created.' }
@@ -49,7 +50,7 @@ class ProtestsController < ApplicationController
   private
 
   def protest_params
-    params.require(:protest).permit(:name, :description, :location, :time, :creator, :image)
+    params.require(:protest).permit(:name, :description, :location, :starts_at, :creator, :image)
   end
 
 end
