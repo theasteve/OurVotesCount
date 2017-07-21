@@ -1,7 +1,8 @@
 class Protest < ApplicationRecord
   validates :name, :description, :location,
-            :time, :creator, presence: true
-  has_attached_file :image, styles: { medium: "400x600#" }
+            :starts_at, :creator, presence: true
+
+  has_attached_file :image, styles: {thumb: "100x100#", medium: "400x600#" }, default_url: "/images/default_:style_avatar.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   belongs_to :creator, class_name: :User

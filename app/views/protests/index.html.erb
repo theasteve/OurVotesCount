@@ -1,1 +1,21 @@
-<h1>List of all the protests</h1>
+
+<div class="col-md-12">
+  <div class="card">
+    <div class="card-header">
+      <h1>Protests</h1>
+    </div>
+
+    <div class="card-block", align="center">
+      <% @protests.each do |protest| %>
+        <div class="row">
+          <div class="col">
+            <h4 class="card-title"><%= protest.name %></h4>
+          </div>
+          <div class="col">
+            <p class="card-img"><%= image_tag protest.image.url(:thumb), class: "img-thumbnail" %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
