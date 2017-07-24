@@ -12,7 +12,7 @@
             <h4 class="card-title"><%= protest.name %></h4>
           </div>
           <div class="col">
-            <p class="card-img"><%= image_tag protest.image.url(:thumb), class: "img-thumbnail" %></p>
+            <p class="card-img"><a href="/protests/<%=protest.id%>"><%= image_tag protest.image.url(:thumb), class: "img-thumbnail" %></a></p>
           </div>
         </div>
       <% end %>
