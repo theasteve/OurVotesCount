@@ -39,6 +39,9 @@ gem 'bootstrap'
 gem 'jquery-rails'
 # turbolinks
 gem 'turbolinks'
+
+# font awesome
+gem 'font-awesome-sass', '~> 4.7'
 # Add theter needed for Bootstrap 4
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
