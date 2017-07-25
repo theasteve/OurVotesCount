@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   root to: "home#index"
 
 
-  resources :protests
+  resources :users, only: [:show] do
+    resources :protests, only: [:index]
+  end
 
+  resources :protests
 
 end

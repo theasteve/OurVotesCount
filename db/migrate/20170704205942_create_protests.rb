@@ -5,7 +5,7 @@ class CreateProtests < ActiveRecord::Migration[5.1]
       t.text :description
       t.string :location
       t.datetime :starts_at
-      t.references :creator
+      t.references :user
     end
   end
 end
