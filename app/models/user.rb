@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :first_name, :last_name, :email,  presence: true
-  has_many :protests
+
+  has_many :protests, foreign_key: :creator_id
 
   has_many :attendances
   has_many :attended_protests, through: :attendances, source: :protest
