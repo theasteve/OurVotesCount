@@ -9,14 +9,13 @@ class TransportationsController < ApplicationController
 
   def create
     @protest = Protest.find(params[:protest_id])
-    #@transportation = @protest.transportations.new(transportation_params)
-
     @transportation = Transportation.new(transportation_params)
     @transportation.destination_id = @protest.id
     @transportation.transporter_id = current_user.id
+
     respond_to do |format|
       if @transportation.save
-        format.html { redirect_to protest_transportation_path(id: @transportation.id), notice: 'Protest was successfully created.' }
+        format.html { redirect_to protest_transportation_path(id: @transportation.id), notice: 'Transportation was successfully created.' }
         format.json { render :show, status: :created, location: @transportation }
       else
         format.html { render :new }
