@@ -3,7 +3,11 @@
     <div class="card-header"><h2>Provide a Transportation for <%= @protest.name %></h2></div>
     <div class="card-block">
 
+<<<<<<< HEAD
     <%= form_for(@transportation, url: user_protest_transportations_path, html: {multipart: true}) do |f| %>
+=======
+    <%= form_for(@transportation, url:  new_user_protest_transportation_path, html: {multipart: true}) do |f| %>
+>>>>>>> 9ecb5ec65f5f29c4dcb6eac2fe2820b89819f1cd
       <div class="form-group">
         <%= f.label :vehicle %>
         <%= f.text_field :vehicle, autofocus: true, class: "form-control" %>
