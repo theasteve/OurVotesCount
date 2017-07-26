@@ -12,39 +12,38 @@ class ProtestsController < ApplicationController
   end
 
   def edit
+    @protest = Protest.find(params[:id])
   end
 
   def create
     @protest = Protest.new(protest_params)
-    @protest.creator = current_user 
+    @protest.creator = current_user
     respond_to do |format|
       if @protest.save
         format.html { redirect_to @protest, notice: 'Protest was successfully created.' }
-        format.json { render :show, status: :created, location: @protest }
       else
         format.html { render :new }
-        format.json { render json: @protest.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def update
+    @protest = Protest.find(params[:id])
+
     respond_to do |format|
       if @protest.update(protest_params)
         format.html { redirect_to @protest, notice: 'Protest was successfully updated.' }
-        format.json { render :show, status: :ok, location: @protest }
       else
         format.html {render :edit }
-        format.json { render json: @protest.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def destroy
+    @protest = Protest.find(params[:id])
     @protest.destroy
-    respond_to do |format|
-      format.html
-    end
+
+    redirect_to protests_path
   end
 
   private

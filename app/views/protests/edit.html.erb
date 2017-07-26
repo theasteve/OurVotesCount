@@ -1,0 +1,40 @@
+<div class="col-md-12">
+  <div class="card">
+    <div class="card-header"><h2>Create A Protest</h2></div>
+    <div class="card-block">
+
+    <%= form_for(@protest, method: :put, html: {multipart: true}) do |f| %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, autofocus: true, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :location %>
+        <%= f.text_field :location, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :starts_at %>
+        <%= f.date_field :starts_at, as: :date, value: f.object.try(:strftime,"%m/%d/%Y"), class: "form-control"%>
+     </div>
+
+      <div class="form-group">
+        <%= f.label :image %>
+        <%= f.file_field :image, as: :file, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "Edit", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+
+
+  </div>
+  </div>
