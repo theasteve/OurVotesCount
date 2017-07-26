@@ -15,7 +15,7 @@ class TransportationsController < ApplicationController
 
     respond_to do |format|
       if @transportation.save
-        format.html { redirect_to protest_transportation_path(id: @transportation.id), notice: 'Transportation was successfully created.' }
+        format.html { redirect_to user_protest_transportation_path(id: @transportation.id), notice: 'Transportation was successfully created.' }
         format.json { render :show, status: :created, location: @transportation }
       else
         format.html { render :new }
