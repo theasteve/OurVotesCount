@@ -12,6 +12,8 @@
  *
  */
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 .card {
   margin-top: 20px;
@@ -45,4 +47,75 @@
 
 #logo-text {
   padding-bottom: 500px;
+}
+
+footer {
+  padding: 50px 0 65px;
+}
+
+footer {
+  display: block;
+  text-align: center;
+}
+footer .list-inline {
+  margin: 0;
+  padding: 0;
+}
+
+footer .copyright {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+a, body {
+    color: #333;
+}
+
+::selection {
+    color: #fff;
+    text-shadow: none;
+    background: #0085A1;
+}
+
+li {
+    display: inline;
+}
+
+/* About */
+
+.about {
+    padding: 50px 0;
+    height: 350px;
+}
+
+/* Services */
+
+.services {
+    padding: 50px 0;
+}
+
+.service-item {
+    margin-bottom: 30px;
+}
+
+.bg-primary {
+    background-color: grey !important;
+}
+
+.text-primary {
+    color: white !important;
+}
+/* Callout */
+
+.callout {
+    display: table;
+    width: 100%;
+    height: 400px;
+    color: #fff;
+    background: url("trump.jpg") no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
