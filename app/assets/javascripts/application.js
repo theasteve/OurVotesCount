@@ -16,3 +16,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$( document ).ready(function() {
+  $("#attend").on("click",function(event){
+  event.preventDefault()
+  var $row = $(this).parent().parent()
+  var $attend = $(this).siblings('#questions')
+
+  $("#attend").text('Attending');
+  $($attend).show();
+
+  });
+});
