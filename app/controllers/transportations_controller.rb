@@ -1,5 +1,7 @@
 class TransportationsController < ApplicationController
   def index
+    @protest = Protest.find(params[:protest_id])
+    @transportations = Transportation.where(destination_id: @protest.id)
   end
 
   def new
