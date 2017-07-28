@@ -1,0 +1,32 @@
+<div class="col-md-12">
+  <div class="card">
+    <div class="card-header"><h2>Provide a Transportation for <%= @protest.name %></h2></div>
+    <div class="card-block">
+
+    <%= form_for(@transportation, url:  user_protest_transportations_path, html: {multipart: true}) do |f| %>
+      <div class="form-group">
+        <%= f.label :vehicle %>
+        <%= f.text_field :vehicle, autofocus: true, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :capacity %>
+        <%= f.text_field :capacity, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :pickup_location %>
+        <%= f.text_field :pickup_location, class: "form-control" %>
+      </div>
+
+
+      <div class="form-group">
+        <%= f.submit "Add Transportation", class: "btn btn-primary" %>
+        <%= link_to "Skip", protests_path, class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+
+
+  </div>
+  </div>

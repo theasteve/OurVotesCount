@@ -1,1 +1,29 @@
-<h1><%= @protest.name %></h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12", align="center">
+      <div class="card">
+        <div class="card-header">
+          <h1><%= @protest.name %></h1>
+        </div>
+        <div class="card-block">
+          <div class="card-img-top"><%= image_tag @protest.image.url(:medium), class: "img-thumbnail" %></div>
+            <% if current_user == @protest.creator %>
+              <%= link_to 'Edit', edit_protest_path %>
+              <%= link_to 'Delete', protest_path(@protest), method: :delete, data: { confirm: "We need you !"} %>
+            <% end %>
+            <a class="nav-link" href="/users/<%= @protest.creator_id %>/protests/<%= @protest.id %>/transportations/new">Add Transportation</a>
+        </div>
+        <ul class="list-group list-group-flush align-items-center">
+          <h4 class="card-title">Description:</h4>
+          <p class="card-text"><%= @protest.description %></p>
+          <h4 class="card-title">Location:</h4>
+          <li class="list-group-item"><%= @protest.location %></li>
+          <h4 class="card-title">Date:</h4>
+          <li class="list-group-item"><%= @protest.starts_at.strftime("%m/%d/%Y") %></li>
+          <h4 class="card-title">Time:</h4>
+          <li class="list-group-item"><%= @protest.starts_at.strftime("at %I:%M%p") %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

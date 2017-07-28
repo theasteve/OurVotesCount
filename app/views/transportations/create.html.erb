@@ -1,0 +1,13 @@
+<h1>You provided transportation for <%= @protest.name %></h1>
+
+<h2>Transportation details: </h2>
+<p>
+  <ul>
+    <li>Vehicle: <%= @transportation.vehicle %></li>
+    <li>Capacity: <%= @transportation.capacity %></li>
+    <li>Pick Up Location: <%= @transportation.pickup_location %></li>
+  </ul>
+</p>
+
+
+<%= link_to "OK", protests_path %>

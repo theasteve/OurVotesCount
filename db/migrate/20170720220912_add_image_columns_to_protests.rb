@@ -4,6 +4,6 @@ class AddImageColumnsToProtests < ActiveRecord::Migration[5.1]
   end
 
   def down
-   remove_attachment :protests, :image 
+   remove_attachment :protests, :image
   end
 end

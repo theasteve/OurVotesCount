@@ -44,7 +44,8 @@ ActiveRecord::Schema.define(version: 20170720220912) do
 
   create_table "transportations", force: :cascade do |t|
     t.string "pickup_location"
-    t.string "type"
+    t.string "vehicle"
+    t.integer "capacity"
     t.bigint "destination_id"
     t.bigint "transporter_id"
     t.index ["destination_id"], name: "index_transportations_on_destination_id"
