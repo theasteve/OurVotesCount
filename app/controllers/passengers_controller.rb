@@ -1,4 +1,6 @@
 class PassengersController < ApplicationController
+
+
   def index
   end
 
@@ -22,6 +24,8 @@ class PassengersController < ApplicationController
 
   def show
     @driver = get_driver
+    @transportation = Transportation.where(transporter_id: @driver.id).first!
+    @protest = Protest.find(@transportation.destination_id)
   end
 
   def edit
@@ -31,17 +35,24 @@ class PassengersController < ApplicationController
   end
 
   def destroy
+    @passenger = Passenger.where(user_id: current_user.id, transportation_id: params[:transportation_id]).first!
+    if @passenger
+      @passenger.destroy
+    else
+      redirect_to user_protests_path, notice: 'Ride was canceled.'
+    end
   end
 
   private
 
   def get_driver
-    p = Passenger.where(user_id: current_user.id).first!
-    t = Transportation.find(p.transportation_id)
-    @driver = User.find(t.transporter_id)
+      p = Passenger.where(user_id: current_user.id, transportation_id: params[:transportation_id]).first!
+      t = Transportation.find(p.transportation_id)
+      @driver = User.find(t.transporter_id)
   end
 
   def passenger_params
     params.permit(:user_id, :transportation_id)
   end
+
 end

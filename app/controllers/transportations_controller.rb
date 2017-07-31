@@ -2,6 +2,14 @@ class TransportationsController < ApplicationController
   def index
     @protest = Protest.find(params[:protest_id])
     @transportations = Transportation.where(destination_id: @protest.id)
+    @transportations.each do |transportation|
+      passengers = Passenger.where(transportation_id: transportation.id)
+      passengers.each do |p|
+        if p.user_id == current_user.id
+          @already_picked_transportation = transportation
+        end
+      end
+    end
   end
 
   def new

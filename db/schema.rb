@@ -34,12 +34,12 @@ ActiveRecord::Schema.define(version: 20170720220912) do
     t.text "description"
     t.string "location"
     t.datetime "starts_at"
-    t.bigint "creator_id"
+    t.bigint "user_id"
     t.string "image_file_name"
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
-    t.index ["creator_id"], name: "index_protests_on_creator_id"
+    t.index ["user_id"], name: "index_protests_on_user_id"
   end
 
   create_table "transportations", force: :cascade do |t|

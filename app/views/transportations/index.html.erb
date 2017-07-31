@@ -20,7 +20,16 @@
                   <td><%= transportation.pickup_location %></td>
                   <td><%= @protest.starts_at.to_formatted_s(:short).to_date %></td>
 
-                  <td><%= button_to "Join the Ride", user_protest_transportation_passengers_path(transportation_id: transportation.id), class: "btn btn-primary"  %></td>
+                  <% if @already_picked_transportation == transportation %>
+                  <td><%= button_to "Joined", 
+                  user_protest_transportation_passengers_path(transportation_id: transportation.id),
+                  class: "btn btn-primary"  %></td>
+                  <% else %>
+                  <td><%= button_to "Join the Ride",
+                  user_protest_transportation_passengers_path(transportation_id: transportation.id),
+                  class: "btn btn-primary"  %></td>
+                  <% end %>
+
                 </tr>
                 <% end %>
 						</tbody>

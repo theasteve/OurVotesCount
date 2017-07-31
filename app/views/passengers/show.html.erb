@@ -1,6 +1,15 @@
-<h1>Passengers#show</h1>
-<p>Find me in app/views/passengers/show.html.erb</p>
 
-
-
+<div class="container">
 <h1>Your driver will be <%= @driver.first_name %> <%= @driver.last_name %></h1>
+
+<ul class="list-group">
+  <li class="list-group-item"><strong>Event:<tab1></strong><%= @protest.name %></li>
+  <li class="list-group-item"><strong>Leaving From:<tab1></strong><%= @transportation.pickup_location%></li>
+  <li class="list-group-item"><strong>On:<tab1></strong><%= @protest.starts_at.to_date %></li>
+  <li class="list-group-item"><strong>At:<tab1></strong><%=  @protest.starts_at.strftime("%I:%M%p") %></li>
+</ul>
+
+<%= link_to "OK", "DashBoard", class: "btn btn-primary  mt-3" %>
+<%= link_to "Cancel the Ride", user_protest_transportation_passenger_path,
+    method: :delete, class: "btn btn-primary ml-3 mt-3", data: { confirm: "Are you sure?" } %>
+</div>
