@@ -13,4 +13,12 @@ class User < ApplicationRecord
 
   has_many :passengers
   has_many :transportations, through: :passengers
+
+  def attending?(protest)
+    if Attendance.exists?(user_id: self.id, protest_id: protest.id)
+      return true
+    else
+      return false
+    end
+  end
 end
