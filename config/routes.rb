@@ -5,16 +5,14 @@ Rails.application.routes.draw do
   root to: "home#index"
 
 
-
-
-
-
   resources :users, only: [:show] do
-    resources :protests, only: [:index] do
+    resources :protests, only: [:index, :show] do
       resources :transportations
     end
   end
 
-  resources :protests
+  resources :protests do
+    resources :attendances, only: [:create, :destroy]
+  end
 
 end
