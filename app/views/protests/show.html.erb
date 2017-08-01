@@ -12,17 +12,49 @@
               <%= link_to 'Delete', protest_path(@protest), method: :delete, data: { confirm: "We need you !"} %>
             <% end %>
             <a class="nav-link" href="/users/<%= @protest.creator_id %>/protests/<%= @protest.id %>/transportations/new">Add Transportation</a>
+
+            <ul class="list-group list-group-flush align-items-center">
+              <h4 class="card-title">Description:</h4>
+              <p class="card-text"><%= @protest.description %></p>
+              <h4 class="card-title">Location:</h4>
+              <li class="list-group-item"><%= @protest.location %></li>
+              <h4 class="card-title">Date:</h4>
+              <li class="list-group-item"><%= @protest.starts_at.strftime("%m/%d/%Y") %></li>
+              <h4 class="card-title">Time:</h4>
+              <li class="list-group-item"><%= @protest.starts_at.strftime("at %I:%M%p") %></li>
+            </ul>
+
         </div>
-        <ul class="list-group list-group-flush align-items-center">
-          <h4 class="card-title">Description:</h4>
-          <p class="card-text"><%= @protest.description %></p>
-          <h4 class="card-title">Location:</h4>
-          <li class="list-group-item"><%= @protest.location %></li>
-          <h4 class="card-title">Date:</h4>
-          <li class="list-group-item"><%= @protest.starts_at.strftime("%m/%d/%Y") %></li>
-          <h4 class="card-title">Time:</h4>
-          <li class="list-group-item"><%= @protest.starts_at.strftime("at %I:%M%p") %></li>
-        </ul>
+
+        <div class="card-footer">
+          <% if !current_user.attending?(@protest) %>
+            <%= button_to "Attend", protest_attendances_path(@protest), class: "btn btn-primary", id: "attend" %>
+          <% end %>
+          <div class="container", id="questions">
+            <%= button_to "Unattend", protest_attendance_path(@protest), method: :delete, data: {confirm: "Are you sure you dont want to be part of the revolution?"}, class: "btn btn-primary", id: "unattend" %>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-block">
+                  <h3 class="card-title">Provide Transportation</h3>
+                  <p class="card-text">Help us in our effort to mobilize people, if you have space in your car share it with someone near you.</p>
+                  <a href="#" class="btn btn-primary">Provide Transportation</a>
+                </div>
+              </div>
+            </div>
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-block">
+                    <h3 class="card-title">Need A Ride?</h3>
+                    <p class="card-text">Find people near you willing to share a seat who are coming to the event. We are all in this together!.</p>
+                    <a href="#" class="btn btn-primary">Get A Ride</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
