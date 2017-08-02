@@ -1,3 +1,6 @@
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
 
 <h1 class="text-center">Transportations for <%= @protest.name %></h1>
 
@@ -11,6 +14,7 @@
 								<th>Leaving From</th>
 								<th>Data and Time</th>
 								<th>Action</th>
+                <th>Edit</th>
 							</tr>
 						</thead>
 
@@ -21,13 +25,16 @@
                   <td><%= @protest.starts_at.to_formatted_s(:short).to_date %></td>
 
                   <% if @already_picked_transportation == transportation %>
-                  <td><%= button_to "Joined", 
-                  user_protest_transportation_passengers_path(transportation_id: transportation.id),
-                  class: "btn btn-primary"  %></td>
+                      <td><%= button_to "Joined",
+                      user_protest_transportation_passengers_path(transportation_id: transportation.id),
+                      class: "btn btn-primary"  %></td>
+                      <td><%= link_to "Cancel the Ride",
+                      user_protest_transportation_passenger_path(id: @passenger.id, transportation_id: transportation.id),
+                      class: "btn btn-primary"  %></td>
                   <% else %>
-                  <td><%= button_to "Join the Ride",
-                  user_protest_transportation_passengers_path(transportation_id: transportation.id),
-                  class: "btn btn-primary"  %></td>
+                    <td><%= button_to "Join",
+                    user_protest_transportation_passengers_path(transportation_id: transportation.id),
+                    class: "btn btn-primary"  %></td>
                   <% end %>
 
                 </tr>

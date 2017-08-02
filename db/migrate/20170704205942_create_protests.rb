@@ -5,7 +5,7 @@ class CreateProtests < ActiveRecord::Migration[5.1]
       t.text :description
       t.string :location
       t.datetime :starts_at
-      t.references :user
+      t.references :creator, index: true, foreign_key: { to_table: :users }
     end
   end
 end

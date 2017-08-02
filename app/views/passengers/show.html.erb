@@ -1,5 +1,9 @@
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
 
 <div class="container">
+  <% if @driver %>
 <h1>Your driver will be <%= @driver.first_name %> <%= @driver.last_name %></h1>
 
 <ul class="list-group">
@@ -9,7 +13,10 @@
   <li class="list-group-item"><strong>At:<tab1></strong><%=  @protest.starts_at.strftime("%I:%M%p") %></li>
 </ul>
 
-<%= link_to "OK", "DashBoard", class: "btn btn-primary  mt-3" %>
+<%= link_to "OK", protests_path, class: "btn btn-primary  mt-3" %>
 <%= link_to "Cancel the Ride", user_protest_transportation_passenger_path,
     method: :delete, class: "btn btn-primary ml-3 mt-3", data: { confirm: "Are you sure?" } %>
 </div>
+<% else %>
+<h1>No Driver</h1>
+<% end %>

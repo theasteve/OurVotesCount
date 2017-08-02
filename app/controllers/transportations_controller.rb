@@ -7,6 +7,7 @@ class TransportationsController < ApplicationController
       passengers.each do |p|
         if p.user_id == current_user.id
           @already_picked_transportation = transportation
+          @passenger = p
         end
       end
     end
