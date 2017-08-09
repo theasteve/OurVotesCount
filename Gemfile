@@ -39,7 +39,8 @@ gem 'bootstrap'
 gem 'jquery-rails'
 # turbolinks
 gem 'turbolinks'
-
+# DataDog
+gem 'ddtrace'
 # font awesome
 gem 'font-awesome-sass', '~> 4.7'
 # Add theter needed for Bootstrap 4

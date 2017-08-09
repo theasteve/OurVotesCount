@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     resources :protests, only: [:index, :show] do
       resources :transportations
+      
     end
   end
 

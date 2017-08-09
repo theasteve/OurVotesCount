@@ -54,6 +54,8 @@ GEM
       climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.1)
     concurrent-ruby (1.0.5)
+    ddtrace (0.8.0)
+      msgpack
     devise (4.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -93,6 +95,7 @@ GEM
     mimemagic (0.3.2)
     mini_portile2 (2.2.0)
     minitest (5.10.2)
+    msgpack (1.1.0)
     multi_json (1.12.1)
     nio4r (2.1.0)
     nokogiri (1.8.0)
@@ -216,6 +219,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap
   byebug
+  ddtrace
   devise
   faker
   font-awesome-sass (~> 4.7)
