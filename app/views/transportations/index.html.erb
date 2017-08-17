@@ -1,2 +1,46 @@
-<h1>Transportations#index</h1>
-<p>Find me in app/views/transportations/index.html.erb</p>
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
+<h1 class="text-center">Transportations for <%= @protest.name %></h1>
+
+<div class="container">
+  <div class="panel-body ">
+						<input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers" />
+					</div>
+					<table class="table table-hover" id="dev-table">
+						<thead>
+							<tr>
+								<th>Leaving From</th>
+								<th>Data and Time</th>
+								<th>Action</th>
+                <th>Edit</th>
+							</tr>
+						</thead>
+
+						<tbody>
+                <% @transportations.each do |transportation| %>
+                <tr>
+                  <td><%= transportation.pickup_location %></td>
+                  <td><%= @protest.starts_at.to_formatted_s(:short).to_date %></td>
+
+                  <% if @already_picked_transportation == transportation %>
+                      <td><%= button_to "Joined",
+                      user_protest_transportation_passengers_path(transportation_id: transportation.id),
+                      class: "btn btn-primary"  %></td>
+                      <td><%= link_to "Cancel the Ride",
+                      user_protest_transportation_passenger_path(id: @passenger.id, transportation_id: transportation.id),
+                      class: "btn btn-primary"  %></td>
+                  <% else %>
+                    <td><%= button_to "Join",
+                    user_protest_transportation_passengers_path(transportation_id: transportation.id),
+                    class: "btn btn-primary"  %></td>
+                  <% end %>
+
+                </tr>
+                <% end %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+</div>
