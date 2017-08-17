@@ -1,4 +1,6 @@
 class ProtestsController < ApplicationController
+
+
   def index
     @protests = Protest.all
   end
