@@ -54,13 +54,14 @@
   padding-bottom: 500px;
 }
 
-footer {
-  padding: 50px 0 65px;
-}
 
 footer {
+  // position:absolute;
+  bottom:0;
+  width:100%;
   display: block;
   text-align: center;
+  padding: 50px 0 65px;
 }
 footer .list-inline {
   margin: 0;

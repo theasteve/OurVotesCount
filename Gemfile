@@ -38,7 +38,7 @@ gem 'bootstrap'
 # Jquery-rails
 gem 'jquery-rails'
 # turbolinks
-gem 'turbolinks'
+# gem 'turbolinks'
 # DataDog
 gem 'ddtrace'
 # font awesome
