@@ -27,9 +27,9 @@
         </div>
 
         <div class="card-footer">
-          <% if !current_user.attending?(@protest) %>
+          
             <%= button_to "Attend", protest_attendances_path(@protest), class: "btn btn-primary", id: "attend" %>
-          <% end %>
+
           <div class="container", id="questions">
             <%= button_to "Unattend", protest_attendance_path(@protest), method: :delete, data: {confirm: "Are you sure you dont want to be part of the revolution?"}, class: "btn btn-primary", id: "unattend" %>
 
