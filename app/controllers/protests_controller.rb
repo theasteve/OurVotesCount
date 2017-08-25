@@ -7,6 +7,7 @@ class ProtestsController < ApplicationController
 
   def show
     @protest = Protest.find(params[:id])
+    @user = current_user
   end
 
   def new

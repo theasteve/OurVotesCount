@@ -27,7 +27,7 @@
         </div>
 
         <div class="card-footer">
-          
+
             <%= button_to "Attend", protest_attendances_path(@protest), class: "btn btn-primary", id: "attend" %>
 
           <div class="container", id="questions">
@@ -39,7 +39,7 @@
                 <div class="card-block">
                   <h3 class="card-title">Provide Transportation</h3>
                   <p class="card-text">Help us in our effort to mobilize people, if you have space in your car share it with someone near you.</p>
-                  <a href="#" class="btn btn-primary">Provide Transportation</a>
+                  <%= link_to 'Provide Transportation', new_user_protest_transportation_path(@user, @protest), class: "btn btn-primary" %>
                 </div>
               </div>
             </div>

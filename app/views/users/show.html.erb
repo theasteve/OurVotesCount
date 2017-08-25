@@ -1,33 +1,36 @@
-<div class="card">
-  <h3 class="card-header">Hi <%= @user.first_name %>!</h3>
-  <div class="card-block">
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="card">
-          <div class="card-block">
-            <h3 class="card-title">My Events</h3>
-              <ul class="list-group">
-                <%  @protests.each do |protest| %>
-                  <li class="list-group-item"><%= protest.name %></li>
-                <% end %>
-              </ul>
+<div class="col-md-12">
+  <div class="card">
+    <h3 class="card-header">Hi <%= @user.first_name %>!</h3>
+    <div class="card-block">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-block">
+              <h3 class="card-title">My Events</h3>
+                <ul class="list-group">
+                  <%  @user.protests.each do |protest| %>
+                    <li class="list-group-item"><%= protest.name %></li>
+                  <% end %>
+                </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-block">
+              <h3 class="card-title">Events Attending</h3>
+                <ul class="list-group">
+                  <% @user.attended_protests.each do |protest_attending| %>
+                    <li class="list-group-item"><%= protest_attending.name %> </li>
+                  <% end %>
+                </ul>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-sm-6">
-        <div class="card">
-          <div class="card-block">
-            <h3 class="card-title">Events Attending</h3>
-              <ul class="list-group">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Morbi leo risus</li>
-                <li class="list-group-item">Porta ac consectetur ac</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-              </ul>
-          </div>
-        </div>
-      </div>
+    </div>
+    <div class="card-footer">
+      <%= link_to "Create Event", new_protest_path, class: "btn btn-primary" %>
     </div>
   </div>
 </div>
