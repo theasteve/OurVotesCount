@@ -8,6 +8,7 @@ class ProtestsController < ApplicationController
   def show
     @protest = Protest.find(params[:id])
     @user = current_user
+    @transportation = Transportation.find(params[:id])
   end
 
   def new
