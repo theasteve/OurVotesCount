@@ -20,6 +20,20 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.content{
+  min-height: 100%;
+  box-sizing: border-box;
+  margin-bottom: -50px;
+  padding-bottom: 50px;
+}
+
 .card {
   margin-top: 20px;
 }
@@ -56,7 +70,6 @@
 
 
 footer {
-  // position:absolute;
   bottom:0;
   width:100%;
   display: block;
