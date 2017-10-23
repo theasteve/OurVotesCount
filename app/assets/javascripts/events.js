@@ -1,8 +1,8 @@
 $( document ).ready(function() {
   $("#attend").on("click",function(event){
   event.preventDefault()
+  debugger
   var $that = $(this)
-
     $.ajax({
         type: 'POST',
         url: $(event.target).parent().attr('action')
