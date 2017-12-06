@@ -43,7 +43,7 @@ body {
     position: relative;
     width: 100%;
     height: 800px;
-    background: url("protest.jpg") no-repeat center center scroll;
+    background: image-url("protest.jpg") no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -132,7 +132,7 @@ li {
     width: 100%;
     height: 400px;
     color: #fff;
-    background: url("trump.jpg") no-repeat center center scroll;
+    background: image-url("trump.jpg") no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
