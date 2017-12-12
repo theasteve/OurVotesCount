@@ -1,4 +1,4 @@
-# Protest Trump
+# OurVotesCount
 
 We are a grassroots movement tool that helps organize and mobilize
 people to take political action. Users have the opportunity to create events aim at bringing political change. There is also a feature in which users can provide transportation which is how we energize and mobilize people to take action and bring change.
