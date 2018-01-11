@@ -1,5 +1,5 @@
 class ProtestsController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: [:index]
 
   def index
     @protests = Protest.all
