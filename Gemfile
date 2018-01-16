@@ -38,7 +38,6 @@ gem 'paperclip', '~> 5.1'
 # S3 storage with AWS
 gem 'aws-sdk', '< 3.0'
 
-gem 'aws-sdk-s3'
 # Bootstrap for styling
 gem 'bootstrap'
 # Jquery-rails
