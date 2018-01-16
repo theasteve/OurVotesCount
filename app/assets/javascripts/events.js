@@ -26,4 +26,6 @@ $( document ).ready(function() {
       $('#questions').parent().children().children().remove()
     })
   })
+
+  $('#dp2').datepicker();
 });
