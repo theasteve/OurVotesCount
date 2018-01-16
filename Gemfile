@@ -36,7 +36,7 @@ gem 'devise'
 #paperclip for images
 gem 'paperclip', '~> 5.1'
 # S3 storage with AWS
-gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
+gem 'aws-sdk', '~> 3'
 
 gem 'aws-sdk-s3'
 # Bootstrap for styling

@@ -750,7 +750,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aws-sdk (~> 3.0, >= 3.0.1)
+  aws-sdk (~> 3)
   aws-sdk-s3
   bootstrap
   byebug
