@@ -35,6 +35,8 @@ gem 'devise'
 # gem 'capistrano-rails', group: :development
 #paperclip for images
 gem 'paperclip', '~> 5.1'
+# S3 storage with AWS
+gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
 # Bootstrap for styling
 gem 'bootstrap'
 # Jquery-rails
