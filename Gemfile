@@ -27,6 +27,8 @@ gem 'popper_js'
 gem 'jbuilder', '~> 2.5'
 #Authentication with Devise
 gem 'devise'
+#datepicket for bootstrap
+gem 'bootstrap-datepicker-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
