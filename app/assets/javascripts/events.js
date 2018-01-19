@@ -26,4 +26,5 @@ $( document ).ready(function() {
       $('#questions').parent().children().children().remove()
     })
   })
+
 });

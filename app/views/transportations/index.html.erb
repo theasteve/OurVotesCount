@@ -12,7 +12,7 @@
 						<thead>
 							<tr>
 								<th>Leaving From</th>
-								<th>Data and Time</th>
+								<th>Date and Time</th>
 								<th>Action</th>
                 <th>Edit</th>
 							</tr>
@@ -23,7 +23,6 @@
                 <tr>
                   <td><%= transportation.pickup_location %></td>
                   <td><%= @protest.starts_at.to_formatted_s(:short).to_date %></td>
-
                   <% if @already_picked_transportation == transportation %>
                       <td><%= button_to "Joined",
                       user_protest_transportation_passengers_path(transportation_id: transportation.id),

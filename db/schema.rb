@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170801191150) do
+ActiveRecord::Schema.define(version: 20180111033828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20170801191150) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.datetime "starts_at_time_of_day"
     t.index ["creator_id"], name: "index_protests_on_creator_id"
   end
 

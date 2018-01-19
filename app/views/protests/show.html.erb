@@ -19,9 +19,9 @@
               <h4 class="card-title">Location:</h4>
               <li class="list-group-item"><%= @protest.location %></li>
               <h4 class="card-title">Date:</h4>
-              <li class="list-group-item"><%= @protest.starts_at.strftime("%m/%d/%Y") %></li>
+              <li class="list-group-item"><%= to_date(@protest.starts_at) %></li>
               <h4 class="card-title">Time:</h4>
-              <li class="list-group-item"><%= @protest.starts_at.strftime("at %I:%M%p") %></li>
+              <li class="list-group-item"><%= to_time(@protest.starts_at) %></li>
             </ul>
 
         </div>
