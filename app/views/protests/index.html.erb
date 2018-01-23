@@ -1,21 +1,31 @@
-
-<div class="col-md-12">
-  <div class="card">
-    <div class="card-header">
-      <h1>Protests</h1>
-    </div>
-
-    <div class="card-block", align="center">
-      <% @protests.each do |protest| %>
-        <div class="row">
-          <div class="col">
-            <h4 class="card-title"><%= protest.name %></h4>
-          </div>
-          <div class="col">
-            <p class="card-img"><a href="/protests/<%=protest.id%>"><%= image_tag protest.image.url(:thumb), class: "img-thumbnail" %></a></p>
-          </div>
-        </div>
-      <% end %>
+<h1>Protests</h1>
+<div class="container">
+  <div class="row">
+    <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+      <ul class="event-list">
+        <% @protests.each do |protest| %>
+          <li>
+            <time datetime="2014-07-20">
+              <span class="day"><%= to_day(protest.starts_at)%></span>
+              <span class="month"><%= to_month(protest.starts_at) %></span>
+              <span class="year"><%= to_year(protest.starts_at) %></span>
+              <span class="time"><%= to_year(protest.starts_at) %></span>
+            </time>
+            <a href="/protests/<%=protest.id%>"><%= image_tag protest.image.url(:thumb) %></a>
+            <div class="info">
+              <h2 class="title"><%= protest.name %></h2>
+              <p class="desc"><%= protest.location %></p>
+            </div>
+            <div class="social">
+              <ul>
+                <li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+                <li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+                <li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+              </ul>
+            </div>
+          </li>
+          <% end %>
+      </ul>
     </div>
   </div>
 </div>
