@@ -36,7 +36,7 @@ gem 'bootstrap-datepicker-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 #paperclip for images
-gem 'paperclip', '~> 5.1'
+gem 'paperclip', '~> 5.2'
 # S3 storage with AWS
 gem 'aws-sdk', '~> 2.3'
 
