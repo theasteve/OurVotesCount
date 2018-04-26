@@ -55,11 +55,17 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
 
+group :test do
+  gem "capybara"
+  gem "selenium-webdriver"
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails', '~> 0.3.6'
   gem 'rspec-rails'
+  gem "database_cleaner"
   gem 'rails-controller-testing'
   gem 'faker'
 end
