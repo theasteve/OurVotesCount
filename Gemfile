@@ -65,7 +65,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails', '~> 0.3.6'
   gem 'rspec-rails'
-  gem "database_cleaner"
+  gem 'database_cleaner', '~> 1.6'
   gem 'rails-controller-testing'
   gem 'faker'
 end
