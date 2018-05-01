@@ -257,7 +257,7 @@ DEPENDENCIES
   bootstrap-datepicker-rails
   byebug
   capybara
-  database_cleaner
+  database_cleaner (~> 1.6)
   ddtrace
   devise
   faker
